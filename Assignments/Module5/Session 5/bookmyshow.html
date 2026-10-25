@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookMyShow - Movie Details</title>
+
+    <style>
+        /* Light mode */
+        body {
+            background-color: white;
+            color: black;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            transition: 0.3s;
+        }
+
+        .movie-card {
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #f2f2f2;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #e50914;
+            color: white;
+        }
+
+        /* Dark mode */
+        body.dark-mode {
+            background-color: #121212;
+            color: white;
+        }
+
+        body.dark-mode .movie-card {
+            background-color: #292929;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>BookMyShow</h1>
+
+    <button onclick="toggleTheme()">Switch to Dark Mode</button>
+
+    <div class="movie-card">
+        <h2>Avengers: Endgame</h2>
+        <p><strong>Genre:</strong> Action, Adventure, Sci-Fi</p>
+        <p><strong>Language:</strong> English</p>
+        <p><strong>Duration:</strong> 3 hours 2 minutes</p>
+        <p>Experience an epic superhero adventure on the big screen!</p>
+        <button>Book Tickets</button>
+    </div>
+
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle("dark-mode");
+
+            const isDark = document.body.classList.contains("dark-mode");
+            const button = document.querySelector("body > button");
+
+            if (isDark) {
+                button.textContent = "Switch to Light Mode";
+            } else {
+                button.textContent = "Switch to Dark Mode";
+            }
+        }
+    </script>
+
+</body>
+</html>

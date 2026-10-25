@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Artist Landing Page</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+          rel="stylesheet">
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #171321, #39204f);
+            color: white;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+        }
+
+        .artist-card {
+            max-width: 650px;
+            margin: 70px auto;
+            padding: 40px 25px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .artist-image {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid #c084fc;
+            margin-bottom: 20px;
+        }
+
+        .artist-name {
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        .artist-bio {
+            color: #ddd6e8;
+            line-height: 1.7;
+            margin: 20px 0;
+        }
+
+        .social-btn {
+            margin: 6px;
+            padding: 10px 18px;
+            border-radius: 30px;
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .instagram {
+            background-color: #d63384;
+        }
+
+        .youtube {
+            background-color: #ff0000;
+        }
+
+        .spotify {
+            background-color: #1db954;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-4px);
+            color: white;
+            filter: brightness(0.85);
+        }
+
+        footer {
+            color: #bdb4ca;
+            font-size: 14px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="artist-card">
+
+            <!-- Artist Profile Image -->
+            <img
+                src="https://placehold.co/400x400/39204f/ffffff?text=Artist"
+                alt="Music artist profile"
+                class="artist-image"
+            >
+
+            <!-- Artist Information -->
+            <h1 class="artist-name">Alex Morgan</h1>
+            <h5 class="text-info">Singer • Songwriter • Musician</h5>
+
+            <p class="artist-bio">
+                Hi, I'm Alex Morgan! I create music that connects people
+                through powerful lyrics and unforgettable melodies.
+                Follow my journey for new songs, live performances,
+                and behind-the-scenes moments.
+            </p>
+
+            <!-- Social Media Buttons -->
+            <div>
+                <a href="https://www.instagram.com/"
+                   target="_blank" rel="noopener noreferrer"
+                   class="social-btn instagram">
+                    <i class="bi bi-instagram"></i> Instagram
+                </a>
+
+                <a href="https://www.youtube.com/"
+                   target="_blank" rel="noopener noreferrer"
+                   class="social-btn youtube">
+                    <i class="bi bi-youtube"></i> YouTube
+                </a>
+
+                <a href="https://open.spotify.com/"
+                   target="_blank" rel="noopener noreferrer"
+                   class="social-btn spotify">
+                    <i class="bi bi-spotify"></i> Spotify
+                </a>
+            </div>
+
+            <footer>
+                © 2026 Alex Morgan | Official Artist Page
+            </footer>
+
+        </div>
+    </div>
+
+</body>
+</html>

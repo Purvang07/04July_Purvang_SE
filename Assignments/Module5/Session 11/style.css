@@ -1,0 +1,14 @@
+
+/* Override Bootstrap primary button */
+.btn-primary {
+    background-color: #e23744;
+    border-color: #e23744;
+    color: white;
+}
+
+/* Button hover effect */
+.btn-primary:hover {
+    background-color: #c82333;
+    border-color: #c82333;
+    color: white;
+}

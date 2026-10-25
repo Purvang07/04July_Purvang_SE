@@ -1,0 +1,12 @@
+/* Style all playlist items */
+.playlist-item {
+    background-color: #121212;
+    color: white;
+    padding: 10px;
+}
+
+/* Highlight the currently playing song */
+#currently-playing {
+    background-color: #1DB954;
+    color: black;
+}

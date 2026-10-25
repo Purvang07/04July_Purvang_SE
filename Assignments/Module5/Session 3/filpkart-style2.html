@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Form</title>
+</head>
+<form action="submit_review.php" method="post">
+    <label for="username">Username: </label>
+        <input type="text" id="username" name="username" required>
+        <br><br>
+    <label for="rating">Rating: </label>
+        <select name="rating" id="rating" required>
+            <option value="">Select Rating</option>
+            <option value="1">1 - Poor</option>
+            <option value="2">2 - Fair</option>
+            <option value="3">3 - Good</option>
+            <option value="4">4 - Very Good</option>
+            <option value="5">5 - Excellent</option>
+        </select>
+        <br><br>
+    <label for="review">Review Message: </label>
+    <textarea name="review"  rows="5" cols="40" minlength="20"
+            placeholder="Write your product review here" required>
+    </textarea>
+    <br><br>
+    <input type="submit" value="Submit Review">
+</form>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookMyShow Movie Grid</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .movie-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .movie-poster {
+            position: relative;
+            width: 200px;
+        }
+
+        .movie-poster img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .new-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #e50914;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .movie-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>BookMyShow - Now Showing</h1>
+
+    <div class="movie-grid">
+
+        <div class="movie-poster">
+            <img src="https://m.media-amazon.com/images/M/MV5BYWVmZWJlNGEtYTk2MS00MGYzLTljMzEtZjU2OGJkYWU5MzEwXkEyXkFqcGc@._V1_.jpg"
+                 alt="Movie One poster">
+            <span class="new-badge">New</span>
+            <p class="movie-title" align="center">Drishyam: The Conclusion</p>
+        </div>
+
+        <div class="movie-poster">
+            <img src="https://cdn.district.in/movies-assets/images/cinema/Jailer2_Poster-9f032960-9b8b-11f1-93d9-1348ba38ffae.jpg"
+                 alt="Movie Two poster">
+            <p class="movie-title" align="center">Jailer 2</p>
+        </div>
+
+        <div class="movie-poster">
+            <img src="https://m.media-amazon.com/images/M/MV5BNDI0NDI1ZGUtNDI4MS00OWQxLWE0ZDgtYTViYmIwODdmZTdiXkEyXkFqcGc@._V1_.jpg"
+                 alt="Movie Three poster">
+            <p class="movie-title" align="center">King</p>
+        </div>
+
+    </div>
+
+</body>
+</html>

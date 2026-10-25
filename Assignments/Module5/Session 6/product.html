@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipkart Product Tile</title>
+
+    <style>
+        .product-tile {
+            width: 250px;
+            padding: 15px;
+            margin: 20px;
+            border: 1px solid #ccc;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Block: image takes its own line */
+        .product-image {
+            display: block;
+            width: 200px;
+            height: 150px;
+            margin: 0 auto 10px;
+        }
+
+        /* Inline-block: name and price can sit on the same line */
+        .product-name,
+        .product-price {
+            display: inline-block;
+            margin: 5px 0;
+        }
+
+        .product-name {
+            font-size: 18px;
+        }
+
+        .product-price {
+            color: green;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* Hide the price when this class is added */
+        .hide-price .product-price {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Add or remove the hide-price class to test the effect -->
+    <div class="product-tile hide-price">
+
+        <img
+            class="product-image"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB-H5q-jTWr-qMLLekeDFeOv2itEXebUcGTxnXzWR6srcPNiSFS98FSsc&s=10"
+            alt="Laptop product">
+
+        <h3 class="product-name">HP Laptop</h3>
+        <span class="product-price">₹49,999</span>
+    </div>
+</body>
+</html>

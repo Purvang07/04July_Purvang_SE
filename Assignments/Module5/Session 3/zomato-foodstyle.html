@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zomato Review</title>
+</head>
+<body>
+    <form>
+        <label for="username">Username: </label>
+            <input type="text" name="tx1" required>
+            <br><br>
+        <label for="items">Food Items: </label>
+            <select name="item" id="item" required>
+                <option value="">Select Items:</option>
+                <option value="1">Butter Chicken</option>
+                <option value="2">Chicken Biryani</option>
+                <option value="3">Chicken Lolipop</option>
+            </select>
+            <br><br>
+        <label for="quanity">Quantity: </label>
+            <input type="text" name="quantity" required>
+            <br><br>
+        <label for="intruction">Delivery Instruction:</label>
+            <textarea name="Instruction" rows="5" cols="40" minlength="20"
+            placeholder="Write delivery instruction" required></textarea>
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+    
+</body>
+</html>

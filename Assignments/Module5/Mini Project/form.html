@@ -1,0 +1,457 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Links Preview</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+          rel="stylesheet">
+
+    <style>
+        body {
+            background: #f4f4f8;
+            font-family: Arial, sans-serif;
+            color: #252238;
+        }
+
+        .main-container {
+            max-width: 850px;
+            margin: 40px auto;
+        }
+
+        .form-box {
+            background: white;
+            padding: 28px;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        .input-icon {
+            position: absolute;
+            top: 50%;
+            left: 15px;
+            transform: translateY(-50%);
+            font-size: 20px;
+            pointer-events: none;
+        }
+
+        .form-control {
+            height: 48px;
+            padding-left: 48px;
+            border-radius: 10px;
+        }
+
+        .form-control:focus {
+            border-color: #8b5cf6;
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.12);
+        }
+
+        .instagram-icon { color: #d63384; }
+        .linkedin-icon { color: #0a66c2; }
+        .youtube-icon { color: #ff0000; }
+        .github-icon { color: #24292f; }
+
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background: #7c3aed;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        .submit-btn:hover {
+            background: #6d28d9;
+            color: white;
+        }
+
+        /* Common preview card */
+        .preview-card {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px;
+            background: white;
+            border: 2px solid;
+            border-radius: 14px;
+            transition: transform 0.2s;
+        }
+
+        .preview-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .platform-logo {
+            font-size: 36px;
+            flex-shrink: 0;
+        }
+
+        .profile-info {
+            min-width: 0;
+            flex-grow: 1;
+        }
+
+        .profile-info h5 {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .username {
+            overflow-wrap: anywhere;
+            font-size: 14px;
+            margin-bottom: 0;
+        }
+
+        .visit-btn {
+            text-decoration: none;
+            border-radius: 20px;
+            padding: 8px 15px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        /* Platform-specific card styles */
+        .instagram-card {
+            border-color: #d63384;
+            background: #fff4fa;
+        }
+
+        .instagram-card .platform-logo {
+            color: #d63384;
+        }
+
+        .instagram-card .visit-btn {
+            background: #d63384;
+            color: white;
+        }
+
+        .linkedin-card {
+            border-color: #0a66c2;
+            background: #f0f7ff;
+        }
+
+        .linkedin-card .platform-logo {
+            color: #0a66c2;
+        }
+
+        .linkedin-card .visit-btn {
+            background: #0a66c2;
+            color: white;
+        }
+
+        .youtube-card {
+            border-color: #ff0000;
+            background: #fff3f3;
+        }
+
+        .youtube-card .platform-logo {
+            color: #ff0000;
+        }
+
+        .youtube-card .visit-btn {
+            background: #ff0000;
+            color: white;
+        }
+
+        .github-card {
+            border-color: #24292f;
+            background: #f1f2f4;
+        }
+
+        .github-card .platform-logo {
+            color: #24292f;
+        }
+
+        .github-card .visit-btn {
+            background: #24292f;
+            color: white;
+        }
+
+        #message {
+            font-size: 14px;
+        }
+
+        @media (max-width: 480px) {
+            .form-box {
+                padding: 20px 16px;
+            }
+
+            .preview-card {
+                gap: 10px;
+                padding: 15px 12px;
+            }
+
+            .platform-logo {
+                font-size: 30px;
+            }
+
+            .visit-btn {
+                padding: 7px 11px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="container main-container">
+        <h1 class="text-center fw-bold mb-2">My Social Profiles</h1>
+        <p class="text-center text-secondary mb-4">
+            Add your links and create your profile cards.
+        </p>
+
+        <!-- Social Links Form -->
+        <div class="form-box">
+            <form id="socialLinksForm">
+
+                <div class="mb-3">
+                    <label for="instagram" class="form-label">Instagram</label>
+                    <div class="input-wrapper">
+                        <i class="bi bi-instagram input-icon instagram-icon"></i>
+                        <input type="url" id="instagram" class="form-control"
+                               placeholder="https://www.instagram.com/username"
+                               pattern="https?://(www\.)?instagram\.com/.*"
+                               title="Enter an Instagram profile URL">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="linkedin" class="form-label">LinkedIn</label>
+                    <div class="input-wrapper">
+                        <i class="bi bi-linkedin input-icon linkedin-icon"></i>
+                        <input type="url" id="linkedin" class="form-control"
+                               placeholder="https://www.linkedin.com/in/username"
+                               pattern="https?://(www\.)?linkedin\.com/.*"
+                               title="Enter a LinkedIn profile URL">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="youtube" class="form-label">YouTube</label>
+                    <div class="input-wrapper">
+                        <i class="bi bi-youtube input-icon youtube-icon"></i>
+                        <input type="url" id="youtube" class="form-control"
+                               placeholder="https://www.youtube.com/@username"
+                               pattern="https?://(www\.)?youtube\.com/.*"
+                               title="Enter a YouTube channel URL">
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label for="github" class="form-label">GitHub</label>
+                    <div class="input-wrapper">
+                        <i class="bi bi-github input-icon github-icon"></i>
+                        <input type="url" id="github" class="form-control"
+                               placeholder="https://github.com/username"
+                               pattern="https?://(www\.)?github\.com/.*"
+                               title="Enter a GitHub profile URL">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn submit-btn">
+                    Generate Preview Cards
+                </button>
+
+                <p id="message" class="mt-3 mb-0 text-center"
+                   aria-live="polite"></p>
+            </form>
+        </div>
+
+        <!-- Preview Cards -->
+        <section class="mt-5">
+            <h2 class="h4 fw-bold mb-3">Profile Previews</h2>
+
+            <div id="previewContainer" class="row g-3">
+                <p id="emptyMessage" class="text-secondary">
+                    Your submitted profile cards will appear here.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const form = document.getElementById("socialLinksForm");
+        const previewContainer = document.getElementById("previewContainer");
+        const message = document.getElementById("message");
+
+        const platforms = [
+            {
+                id: "instagram",
+                name: "Instagram",
+                icon: "bi-instagram",
+                cardClass: "instagram-card"
+            },
+            {
+                id: "linkedin",
+                name: "LinkedIn",
+                icon: "bi-linkedin",
+                cardClass: "linkedin-card"
+            },
+            {
+                id: "youtube",
+                name: "YouTube",
+                icon: "bi-youtube",
+                cardClass: "youtube-card"
+            },
+            {
+                id: "github",
+                name: "GitHub",
+                icon: "bi-github",
+                cardClass: "github-card"
+            }
+        ];
+
+        // Extract a username or handle from the profile URL
+        function extractUsername(url, platform) {
+            const parsedUrl = new URL(url);
+            const parts = parsedUrl.pathname.split("/").filter(Boolean);
+
+            if (platform === "instagram") {
+                return "@" + parts[0];
+            }
+
+            if (platform === "linkedin") {
+                const index = parts.findIndex(part => part === "in");
+                if (index !== -1 && parts[index + 1]) {
+                    return parts[index + 1];
+                }
+            }
+
+            if (platform === "youtube") {
+                const channelType = ["@", "channel", "c", "user"];
+                const first = parts[0];
+
+                if (first && first.startsWith("@")) {
+                    return first;
+                }
+
+                if (channelType.includes(first) && parts[1]) {
+                    return parts[1].startsWith("@")
+                        ? parts[1]
+                        : parts[1];
+                }
+            }
+
+            if (platform === "github") {
+                return "@" + parts[0];
+            }
+
+            return parts[0] || parsedUrl.hostname;
+        }
+
+        function createPreviewCard(platform, url, username) {
+            const column = document.createElement("div");
+            column.className = "col-12 col-md-6";
+
+            const card = document.createElement("div");
+            card.className = "preview-card " + platform.cardClass;
+
+            const icon = document.createElement("i");
+            icon.className = "bi " + platform.icon + " platform-logo";
+            icon.setAttribute("aria-hidden", "true");
+
+            const info = document.createElement("div");
+            info.className = "profile-info";
+
+            const title = document.createElement("h5");
+            title.textContent = platform.name;
+
+            const handle = document.createElement("p");
+            handle.className = "username text-secondary";
+            handle.textContent = username;
+
+            const button = document.createElement("a");
+            button.className = "visit-btn";
+            button.href = url;
+            button.target = "_blank";
+            button.rel = "noopener noreferrer";
+            button.textContent = "Visit";
+            button.setAttribute("aria-label", "Visit " + platform.name + " profile");
+
+            info.append(title, handle);
+            card.append(icon, info, button);
+            column.appendChild(card);
+
+            return column;
+        }
+
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            previewContainer.replaceChildren();
+            message.textContent = "";
+
+            let count = 0;
+
+            platforms.forEach(function(platform) {
+                const input = document.getElementById(platform.id);
+                const url = input.value.trim();
+
+                if (!url) return;
+
+                try {
+                    const parsedUrl = new URL(url);
+
+                    // Validate that the URL uses the expected platform domain
+                    const allowedDomains = {
+                        instagram: ["instagram.com"],
+                        linkedin: ["linkedin.com"],
+                        youtube: ["youtube.com"],
+                        github: ["github.com"]
+                    };
+
+                    const validDomain = allowedDomains[platform.id].some(
+                        domain => parsedUrl.hostname === domain ||
+                                  parsedUrl.hostname.endsWith("." + domain)
+                    );
+
+                    if (!["http:", "https:"].includes(parsedUrl.protocol) ||
+                        !validDomain) {
+                        throw new Error("Invalid platform URL");
+                    }
+
+                    const username = extractUsername(url, platform);
+
+                    previewContainer.appendChild(
+                        createPreviewCard(platform, url, username)
+                    );
+
+                    count++;
+                } catch (error) {
+                    message.textContent =
+                        "Please check your entered profile URLs.";
+                    message.className =
+                        "mt-3 mb-0 text-center text-danger";
+                }
+            });
+
+            if (count > 0) {
+                message.textContent =
+                    count + " profile preview card(s) generated.";
+                message.className =
+                    "mt-3 mb-0 text-center text-success";
+            } else if (!message.textContent) {
+                message.textContent =
+                    "Please enter at least one valid profile URL.";
+                message.className =
+                    "mt-3 mb-0 text-center text-danger";
+            }
+        });
+    </script>
+
+</body>
+</html>
